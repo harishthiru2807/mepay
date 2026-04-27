@@ -29,6 +29,7 @@ const authenticateToken = (req, res, next) => {
 
 // Login or auto-register logic
 app.post('/api/auth/login', async (req, res) => {
+  console.log('Login attempt received:', req.body);
   const { phone, pin } = req.body;
 
   if (phone !== '8098719903' || pin !== '2802') {

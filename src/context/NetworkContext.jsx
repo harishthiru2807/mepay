@@ -12,7 +12,7 @@ export function NetworkProvider({ children }) {
     const token = localStorage.getItem('meshpay_token');
     if (!token) return;
     try {
-      const response = await fetch('http://localhost:5000/api/transactions', {
+      const response = await fetch('http://127.0.0.1:5000/api/transactions', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) {
@@ -49,7 +49,7 @@ export function NetworkProvider({ children }) {
     if (!token) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/pay', {
+      const response = await fetch('http://127.0.0.1:5000/api/pay', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
