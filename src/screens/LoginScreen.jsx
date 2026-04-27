@@ -8,7 +8,7 @@ export default function LoginScreen({ onNext }) {
   
   const handleContinue = (e) => {
     e.preventDefault();
-    if (phone.length >= 10) {
+    if (phone.length > 0) {
       onNext(phone);
     }
   };
@@ -37,7 +37,6 @@ export default function LoginScreen({ onNext }) {
             </div>
             <input 
               type="tel" 
-              maxLength="10"
               placeholder="00000 00000"
               value={phone}
               onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
@@ -52,7 +51,7 @@ export default function LoginScreen({ onNext }) {
 
         <button 
           onClick={handleContinue}
-          disabled={phone.length < 10}
+          disabled={phone.length === 0}
           className="mt-auto w-full bg-[var(--color-primary)] disabled:opacity-30 disabled:grayscale text-black h-16 rounded-[2rem] font-extrabold flex items-center justify-center space-x-3 transition-all active:scale-[0.98] shadow-[0_0_20px_rgba(16,185,129,0.2)]"
         >
           <span className="uppercase tracking-widest text-sm">Continue</span>
