@@ -31,6 +31,10 @@ const authenticateToken = (req, res, next) => {
 app.post('/api/auth/login', async (req, res) => {
   const { phone, pin } = req.body;
 
+  if (phone !== '8098719903' || pin !== '2802') {
+    return res.status(401).json({ message: 'Invalid credentials. Use 8098719903 / 2802' });
+  }
+
   try {
     let user = await get("SELECT * FROM users WHERE phone = ?", [phone]);
 

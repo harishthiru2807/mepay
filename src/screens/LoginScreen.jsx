@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { Wallet, ArrowRight, Smartphone } from 'lucide-react';
 
 export default function LoginScreen({ onNext }) {
-  const [phone, setPhone] = useState('');
+  const [phone, setPhone] = useState('8098719903');
   
   const handleContinue = (e) => {
     e.preventDefault();
